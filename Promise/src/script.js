@@ -42,6 +42,7 @@ const getData = (kondisi) => {
 // });
 
 //* async await
+
 document.getElementById("btn").addEventListener("click", async function () {
   this.innerHTML = "loading...";
   const p = document.querySelector("p");
@@ -51,6 +52,6 @@ document.getElementById("btn").addEventListener("click", async function () {
   } catch (error) {
     p.innerHTML = error;
   } finally {
-    this.innerHTML = "click me";
+    this.innerHTML = "Hi! click me";
   }
 });

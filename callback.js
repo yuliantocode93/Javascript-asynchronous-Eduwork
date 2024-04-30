@@ -31,7 +31,7 @@ document.getElementById("btn").addEventListener("click", function () {
   alert("hello eduwork");
 });
 
-// 3. callback pada asynchronous
+//* 3. callback pada asynchronous
 function getData(url, cb) {
   let xhr = new XMLHttpRequest();
   xhr.onload = function () {
@@ -46,5 +46,3 @@ function getData(url, cb) {
 const data = getData("https://jsonplaceholder.typicode.com/users/1", function (data) {
   console.log(data);
 });
-
-console.log(data);

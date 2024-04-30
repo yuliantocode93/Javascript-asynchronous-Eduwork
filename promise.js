@@ -1,36 +1,25 @@
+//* Membuat fungsi untuk mengambil daftar pengguna menggunakan Promise
 // fetch('https://jsonplaceholder.typicode.com/users')
 //   .then(res => res.json())
 //   .then(res => {
-//   document.getElementById('data').innerHTML = render(res)
-// });
+//     document.getElementById('data').innerHTML = render(res)
+//   });
+
+//* Membuat fungsi untuk mengambil daftar pengguna menggunakan axios
 // const table = document.getElementById('data');
 // table.innerHTML = message('loading...');
 // const data = fetch('https://jsonplaceholder.typicode.com/users');
 // data
-//   .then(function(res){ return res.json()})
+//   .then(function (res) { return res.json() })
 //   .then(res => {
-//       table.innerHTML = render(res)
+//     table.innerHTML = render(res)
 //   })
 //   .catch(err => {
-//       table.innerHTML = message(err.message)
+//     table.innerHTML = message(err.message)
 //   })
 //   .finally(() => {
 
 //   });
-// const table = document.getElementById("data");
-// table.innerHTML = message("loading...");
-// const data = fetch("https://jsonplaceholder.typicode.com/users");
-// data
-//   .then(function (res) {
-//     return res.json();
-//   })
-//   .then((res) => {
-//     table.innerHTML = render(res);
-//   })
-//   .catch((err) => {
-//     table.innerHTML = message(err.message);
-//   })
-//   .finally(() => {});
 
 axios.get("https://jsonplaceholder.typicode.com/users").then((res) => {
   document.getElementById("data").innerHTML = render(res.data);
@@ -46,7 +35,7 @@ function render(result) {
                 <td>${data.email}</td>
                 <td>
                   ${data.address.street},
-                  ${data.address.suite}, 
+                  ${data.address.suite},
                   ${data.address.city}
                  </td>
                 <td>${data.phone}</td>
@@ -57,8 +46,8 @@ function render(result) {
   return table;
 }
 
-function message(msg) {
+function message(message) {
   return `<tr>
-            <td class="text-center" colspan="8">${msg}</td>
+            <td class="text-center" colspan="8">${message}</td>
         </tr>`;
 }
