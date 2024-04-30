@@ -1,36 +1,35 @@
-// function main(param1, param2, cb) {
-//   console.log(param1, param2);
-//   cb();
-// }
+function main(param1, param2, cb) {
+  console.log(param1, param2);
+  cb();
+}
 
-// function myCallback() {
-//   console.log("hello callback");
-// }
+function myCallback() {
+  console.log("hello callback");
+}
+main(1, 2, myCallback);
 
-// main(1, 2, myCallback);
+//* 1. function injection
+function calculate(param1, param2, callback) {
+  let result = param1 + param2;
+  if (typeof callback === "function") {
+    result = callback(param1, param2);
+  }
+  return result;
+}
 
-// 1. function injection
-// function calculate(param1, param2, callback) {
-//   let result = param1 + param2;
-//   if (typeof callback === "function") {
-//     result = callback(param1, param2);
-//   }
-//   return result;
-// }
+let a = calculate(7000, 2000, function (x, y) {
+  return x / y;
+});
 
-// let a = calculate(7000, 2000, function (x, y) {
-//   return x / y;
-// });
+let b = calculate(3000, 2000);
 
-// let b = calculate(3000, 2000);
+console.log(a);
+console.log(b);
 
-// console.log(a);
-// console.log(b);
-
-// 2. event listener
-// document.getElementById("btn").addEventListener("click", function () {
-//   alert("hello eduwork");
-// });
+//* 2. event listener
+document.getElementById("btn").addEventListener("click", function () {
+  alert("hello eduwork");
+});
 
 // 3. callback pada asynchronous
 function getData(url, cb) {
@@ -48,4 +47,4 @@ const data = getData("https://jsonplaceholder.typicode.com/users/1", function (d
   console.log(data);
 });
 
-// console.log(data);
+console.log(data);
