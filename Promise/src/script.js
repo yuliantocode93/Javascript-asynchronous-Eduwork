@@ -20,7 +20,7 @@ const getData = (kondisi) => {
         resolve("selamat datang di kelas mern");
       }, 3000);
     } else {
-      reject(new Error("maaf kelas belum di buka :("));
+      reject(new Error("maaf kelas belum di buka :( "));
     }
   });
 };

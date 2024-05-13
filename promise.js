@@ -1,29 +1,30 @@
 //* Membuat fungsi untuk mengambil daftar pengguna menggunakan Promise
-// fetch('https://jsonplaceholder.typicode.com/users')
-//   .then(res => res.json())
-//   .then(res => {
-//     document.getElementById('data').innerHTML = render(res)
+// fetch("https://jsonplaceholder.typicode.com/users")
+//   .then((res) => res.json())
+//   .then((res) => {
+//     document.getElementById("data").innerHTML = render(res);
 //   });
 
 //* Membuat fungsi untuk mengambil daftar pengguna menggunakan axios
-// const table = document.getElementById('data');
-// table.innerHTML = message('loading...');
-// const data = fetch('https://jsonplaceholder.typicode.com/users');
-// data
-//   .then(function (res) { return res.json() })
-//   .then(res => {
-//     table.innerHTML = render(res)
-//   })
-//   .catch(err => {
-//     table.innerHTML = message(err.message)
-//   })
-//   .finally(() => {
+const table = document.getElementById("data");
+table.innerHTML = message("loading...");
+const data = fetch("https://jsonplaceholder.typicode.com/users");
+data
+  .then(function (res) {
+    return res.json();
+  })
+  .then((res) => {
+    table.innerHTML = render(res);
+  })
+  .catch((err) => {
+    // table.innerHTML = message("Error: gagal mengambil data");
+    table.innerHTML = message(err.message);
+  })
+  .finally(() => {});
 
-//   });
-
-axios.get("https://jsonplaceholder.typicode.com/users").then((res) => {
-  document.getElementById("data").innerHTML = render(res.data);
-});
+// axios.get("https://jsonplaceholder.typicode.com/users").then((res) => {
+//   document.getElementById("data").innerHTML = render(res.data);
+// });
 
 function render(result) {
   let table = "";
