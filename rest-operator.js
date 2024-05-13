@@ -19,7 +19,7 @@ const { name, ...info } = person;
 console.log(name); // Output: John
 console.log(info); // Output: { age: 30, country: 'USA' }
 
-//* Rest Operator pada Array Function:
+//* Rest Operator dalam Array Function:
 
 const multiply = (multiplier, ...numbers) => {
   return numbers.map((num) => num * multiplier);

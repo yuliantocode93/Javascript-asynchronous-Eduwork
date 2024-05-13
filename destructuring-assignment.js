@@ -1,3 +1,4 @@
+//* Destructuring Assignment
 // Contoh 1: Memecah array
 const numbers = [10, 20, 30];
 const [first, second, third] = numbers;
